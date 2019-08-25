@@ -1,0 +1,17 @@
+{
+  "name": "rolly-be",
+  "version": "1.0.0",
+  "description": "This is a backend processing for text-to-speech Google API",
+  "main": "index.js",
+  "scripts": {
+    "start": "functions-framework --target=rollyBackEnd",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rich Rose",
+  "license": "MIT",
+  "dependencies": {
+    "@google-cloud/functions-framework": "^1.2.1",
+    "@google-cloud/storage": "^3.2.0",
+    "@google-cloud/text-to-speech": "^1.1.3"
+  }
+}

@@ -1,0 +1,66 @@
+#message
+html
+  head
+    style.
+      /* Style inputs */
+      input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      /* Style the submit button */
+      input[type=submit] {
+        width: 20%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      /* Add a background color to the submit button on mouse-over */
+      input[type=submit]:hover {
+        background-color: #45a049;
+      }    
+
+      .header {
+         text-align: center;
+         font-family: roboto;
+      }
+
+      .card {
+         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+         padding: 14px 20px;
+         max-width: 600px;
+         margin: auto;
+         text-align: left;
+         font-family: roboto;
+      }
+
+  body
+    div.header Text to Speech:
+    p
+    div.card 
+      p. 
+        Add the text you want to transpose to an MP3 in the text box below (Limit 100 words).
+        Select the options and then click submit.
+      form(action="/action.html" method="get" target="_blank")
+        label Text to Transpose: <input type="text" name="speech_text"><br>
+        label(for="voice_name") Voice name:<br> 
+        select(name="voice_name", id="voice_name")
+          each voice_name in voice_names
+            option(value=voice_name)=voice_name
+        p
+        label(for='voice_type') Voice Type <br> 
+        select(name='voice_type', id='voice_type')
+          each voice_type in voice_types
+            option(value=voice_type)=voice_type
+        p  
+        input(type='submit', value='Submit')
