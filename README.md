@@ -23,4 +23,4 @@ been written as Nodejs modules and uses Cloud Functions with the Functions Frame
 
 # Fork Me
 
-Feel free to re-use the code as you see fit. Licenced as MIT.
+Feel free to re-use the code as you see fit. Licenced as GNU GPLv3.
