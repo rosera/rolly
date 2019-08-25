@@ -8,12 +8,13 @@ Ouput will be sent to the designated bucket and a file named audio.mp3 will be c
 
 
 # Form Submit
+When the form is submitted the parameter list will be passed like below:
 
-http://localhost:8080/action.html?speech_text=This+is+a+message&voice_name=en-US-Wavenet-A&voice_type=WaveNet
+URL/?speech_text=This+is+a+message&voice_name=en-US-Wavenet-A&voice_type=WaveNet
 
-speech_text - Text to be transposed
-voice_name - Name of the voice to be used
-voice_type - Type of algorithm to be used
+* speech_text - Text to be transposed
+* voice_name - Name of the voice to be used
+* voice_type - Type of algorithm to be used
 
 
 # Details
