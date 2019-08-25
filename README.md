@@ -7,13 +7,30 @@ the approach is good to utilise any of the APIs available
 
 # Sample Application
 
-The sample application contains two Cloud Functions. The first function manages the front-end in 
+The sample application contains two Cloud Functions. 
+
+### FRONTEND: rolly-fe
+
+![Rolly Frontend image](https://github.com/rosera/rolly/blob/master/images/rolly-fe.png "Rolly Frontend")
+
+The first function manages the front-end in 
 which there is a form that contains information to be completed. Once the form is completed, select
 the submit button to pass the information to the backend.
+
+Packages:
+* @google-cloud/functions-framework
+* pug
+
+### BACKEND: rolly-be
 
 The second function represents a backend application awaiting information to be posted to the available
 URL. The application expects some parameters that will be used to indicate how to process the
 information sent.
+
+Packages:
+* @google-cloud/functions-framework
+* @google-cloud/text-to-speech
+* @google-cloud/storage
 
 
 # Dependencies
