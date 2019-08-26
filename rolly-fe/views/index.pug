@@ -51,16 +51,16 @@ html
       p. 
         Add the text you want to transpose to an MP3 in the text box below (Limit 100 words).
         Select the options and then click submit.
-      form(action="/action.html" method="get" target="_blank")
+      form(action=" https://us-central1-roselabs-212512.cloudfunctions.net/rollyBackEnd" method="get" target="_blank")
         label Text to Transpose: <input type="text" name="speech_text"><br>
         label(for="voice_name") Voice name:<br> 
         select(name="voice_name", id="voice_name")
           each voice_name in voice_names
             option(value=voice_name)=voice_name
         p
-        label(for='voice_type') Voice Type <br> 
-        select(name='voice_type', id='voice_type')
-          each voice_type in voice_types
-            option(value=voice_type)=voice_type
+        label(for='voice_lang') Language <br> 
+        select(name='voice_lang', id='voice_lang')
+          each voice_lang in voice_langs
+            option(value=voice_lang)=voice_lang
         p  
         input(type='submit', value='Submit')

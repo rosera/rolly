@@ -11,14 +11,13 @@ const myBucket = storage.bucket('roselabs-cloud-functions');
 const file = myBucket.file('audio.mp3');
 
 // Process the file
-async function googleSpeechEngine(message) {
+async function googleSpeechEngine(voice_name, lang, message) {
   const client = new textToSpeech.TextToSpeechClient();
-  const text = 'Blurb';
 
-  // Construct the REST API call
+  // Construct the REST API call - https://cloud.google.com/text-to-speech
   const request = {
     input: {text: message},
-    voice: {languageCode: 'en-UK', ssmlGender: 'NEUTRAL'},
+    voice: {languageCode: lang, ssmlGender: 'NEUTRAL', name: voice_name},
     audioConfig: {audioEncoding: 'MP3'},
   };
 
@@ -42,18 +41,21 @@ async function googleSpeechEngine(message) {
 
 exports.rollyBackEnd=(req, res)=>{
   // Take the parameters from the Frontend
-  let name = req.query.voice_name || 'error';
-  let type = req.query.voice_type || 'error';
-  let message = req.query.speech_texti || 'error';
+  let voice_name = req.query.voice_name || 'error';
+  let lang = req.query.voice_lang || 'error';
+  let message = req.query.speech_text || 'error';
 
   // Debug messages - show the parameters passed
-  console.log('Name: ' + name);
-  console.log('Type: ' + type);
+  console.log('Name: ' + voice_name);
+  console.log('Language: ' + lang);
   console.log('Message: ' + message);
 
   // Do some validation - just swap for correct values if empty
   
 
   // Call the text-to-speech engine
-  //googleSpeechEngine("This is a test message from rollFrontEnd");
+  //googleSpeechEngine(voice_name, lang, message);
+
+  // Respond with an Ok
+  res.status(200);
 }

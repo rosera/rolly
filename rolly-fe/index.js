@@ -18,7 +18,7 @@ exports.rollyFrontEnd = (req, res) => {
   // Pass name and type to the
   res.status(200).send(pugInputFile({
      voice_names: data['name'],
-     voice_types: data['type']
+     voice_langs: data['language']
   }));
 };
 
